@@ -1,0 +1,14 @@
+name: Vulnerability scan
+
+on: [push]
+
+jobs:
+  vulnerabilities-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: debricked/actions/cache@v3
+      - uses: debricked/actions/scan-non-docker@v3
+        env:
+          DEBRICKED_TOKEN: 67b2f9e2d2c188eba1fde9305446fcdfe06a148d05b4c1ad
